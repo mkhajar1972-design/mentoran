@@ -28,15 +28,40 @@
       display: block;
     }
 
-    /* Clickable yellow circle hotspot */
+    /* Invisible clickable hotspot area */
     .hotspot {
       position: absolute;
       left: 50%;
-      top: 58%;     /* placement adjusted for your new image */
+      top: 60%;            /* Perfect for your image */
       transform: translate(-50%, -50%);
-      width: 22%;   /* responsive size */
-      height: 22%;
+      width: 23%;
+      height: 23%;
       cursor: pointer;
+    }
+
+    /* PULSE EFFECT */
+    .pulse-ring {
+      position: absolute;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%);
+      width: 23%;
+      height: 23%;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 0, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 35px rgba(255, 255, 0, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 0, 0);
+      }
     }
   </style>
 </head>
@@ -44,11 +69,15 @@
 <body>
 
   <div class="container">
-    <img src="logo12.png" alt="Mentoran Image" />
+    <img src="logo12.png" alt="Mentoran" />
 
-    <!-- invisible clickable hotspot -->
-    <a href="https://web.mentoran.in" class="hotspot"></a>
+    <!-- Pulse Ring (visual only) -->
+    <div class="pulse-ring"></div>
+
+    <!-- Actual clickable hotspot -->
+    <a class="hotspot" href="https://web.mentoran.in"></a>
   </div>
 
 </body>
 </html>
+
